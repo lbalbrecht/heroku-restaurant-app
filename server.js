@@ -4,12 +4,12 @@ var path = require("path");
 
 // Sets up Express
 var app = express();
-var PORT = 3000;
+const PORT = process.env.PORT ||3000;
 
 // Tells express to process JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(express.static("public"))
 // Routes
 
 // Basic route that sends the user first to the AJAX Page
